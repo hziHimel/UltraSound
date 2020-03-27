@@ -1,0 +1,34 @@
+import os
+
+for i in range(437):
+    os.remove(("E:/Academic/Thesis/TumorImages/Dataset_BUSI_with_GT/benign/benign (" + str(i+1) + ")_mask.png"))
+
+for i in range(437):
+    try:
+        os.remove(("E:/Academic/Thesis/TumorImages/Dataset_BUSI_with_GT/benign/benign (" + str(i+1) + ")_mask_1.png"))
+    except:
+        pass
+
+for i in range(437):
+    try:
+        os.remove(("E:/Academic/Thesis/TumorImages/Dataset_BUSI_with_GT/benign/benign (" + str(i+1) + ")_mask_2.png"))
+    except:
+        pass
+
+for i in range(211):
+    try:
+        os.remove(("E:/Academic/Thesis/TumorImages/Dataset_BUSI_with_GT/malignant/malignant (" + str(i+1) + ")_mask.png"))
+    except:
+        pass
+
+for i in range(211):
+    try:
+        os.remove(("E:/Academic/Thesis/TumorImages/Dataset_BUSI_with_GT/malignant/malignant (" + str(i+1) + ")_mask_1.png"))
+    except:
+        pass
+
+for i in range(133):
+    try:
+        os.remove(("E:/Academic/Thesis/TumorImages/Dataset_BUSI_with_GT/normal/normal (" + str(i+1) + ")_mask.png"))
+    except:
+        pass

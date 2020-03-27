@@ -1,0 +1,11 @@
+import csv
+
+with open('E:\Academic\Thesis\Training_Data.csv' , 'w' , newline = '') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Old File ID' , 'New File ID' , 'Label'])
+    for i in range(133):
+        writer.writerow(['Normal(' + str(i+1) + ').png' , str(i) + '.png' , 0])
+    for j in range(437):
+        writer.writerow(['Benign(' + str(j+1) + ').png' , str(i+j+1) + '.png' , 1])
+    for k in range(211):
+        writer.writerow(['Malignant(' + str(k+1) + ').png' , str(i+j+k+2) + '.png' , 2])

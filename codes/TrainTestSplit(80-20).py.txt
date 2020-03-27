@@ -1,0 +1,54 @@
+import csv
+
+lineCount = 0
+normalCount = 0
+benignCount = 0
+malignantCount = 0
+
+
+
+
+with open('reading.csv') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    
+    with open('E:\Academic\Thesis\TrainCSV.csv' , 'w' , newline = '')as train:
+        trainWriter = csv.writer(train)
+        trainWriter.writerow(['Old File ID' , 'New File ID' , 'Label'])
+
+        with open('E:\Academic\Thesis\TestCSV.csv' , 'w' , newline = '')as test:
+            testWriter = csv.writer(test)
+            testWriter.writerow(['Old File ID' , 'New File ID' , 'Label'])
+    
+            for row in csv_reader:
+                if row[2] == '0':
+                    if normalCount < 26 :
+                        testWriter.writerow(row)
+                        normalCount += 1
+                    else:
+                        trainWriter.writerow(row)
+                        normalCount += 1
+
+                elif row[2] == '1':
+                    if benignCount < 87 :
+                        testWriter.writerow(row)
+                        benignCount += 1
+                    else:
+                        trainWriter.writerow(row)
+                        benignCount += 1
+
+                elif row[2] == '2':
+                    if malignantCount < 42 :
+                        testWriter.writerow(row)
+                        malignantCount += 1
+                    else:
+                        trainWriter.writerow(row)
+                        malignantCount += 1
+
+                lineCount += 1
+    
+print('Normal Count = ' , normalCount)
+print('Benign Count = ' , benignCount)
+print('Malignant Count = ' , malignantCount)
+print('Line Count = ' , lineCount)
+            
+ 
